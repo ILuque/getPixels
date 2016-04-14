@@ -50,21 +50,21 @@ h1 {
 }
 
 
-/*canvas & wrapper*/
+/*canvas & nodeWrapper*/
 
 canvas,
-#wrapper {
+#nodeWrapper {
     border: 1px solid black;
 }
 
 #canvasWp,
-#wrapper,
+#nodeWrapper,
 .arrow {
     display: inline-block;
     vertical-align: top;
 }
 
-#wrapper {
+#nodeWrapper {
     width: 500px;
     height: 500px;
 }
@@ -96,7 +96,7 @@ canvas,
 
 /*begin*/
 
-#wrapper>ul {
+#nodeWrapper>ul {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -104,11 +104,11 @@ canvas,
     display: table;
 }
 
-#wrapper>ul>ul {
+#nodeWrapper>ul>ul {
     display: table-row;
 }
 
-#wrapper>ul>ul>li {
+#nodeWrapper>ul>ul>li {
     display: table-cell;
     margin: auto;
 }
