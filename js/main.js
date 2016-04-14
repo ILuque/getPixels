@@ -111,6 +111,7 @@
         structure += "</ul>";
 
         nodeWrap.innerHTML = structure;
+        pub.structure=structure; //object fot the user
     } // \draw function
 
     function getPixelColor(canvas, x, y) {
