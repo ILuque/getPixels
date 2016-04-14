@@ -1,16 +1,15 @@
-console.info('updated');
+
 (function(pub, $, undefined) {
     "use strict";
-    // default values
+
+    // uses default values at form
     window.onload = function() {
         pub.updateWrap();
     };
 
 
     pub.updateWrap = function() {
-        var f = dataWrapForm(); //check form
-          console.info(f.canvasX, f.canvasY);
-        
+        var f = dataWrapForm(); //check form        
         draw(f.imageId, f.nodesX, f.nodesY, f.text); //draw new image
     };
 
@@ -34,13 +33,9 @@ console.info('updated');
             }
         }
 
-        //canvas
-        f.canvasX = +document.getElementById('canvasX').value;
-        f.canvasY = +document.getElementById('canvasY').value;
 
-        console.log(f);
-        console.log(f.canvasX);
-        return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text, canvasX: f.canvasX, canvasY: f.canvasY };
+
+        return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text};
     }
 
 
