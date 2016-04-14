@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>worldMap</title>
+    <!-- Lets try not to use jQuery, but just in case I set it up. -->
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- loading images: HIDDEN -->
+    <img id="image1" src="img/worldMap.png" style="display:none;">
+    <img id="image2" src="img/worldMap200x111.png" style="display:none;">
+    <img id="image3" src="img/picasso.jpg" style="display:none;">
+    <img id="image4" src="img/seta.jpg" style="display:none;">
+    <img id="image5" src="img/chrome.png" style="display:none;">
+    <!-- form -->
+    <div id="form">
+        <div>amount of nodes.
+            <br> - horizontal
+            <input type="number" id="nodesX" value="100" size="4"> - vertical
+            <input type="number" id="nodesY" value="50" size="4">
+        </div>
+        text in square
+        <input type="text" id="text" value="">
+        <div>size wrapper.
+            <br> - horizontal
+            <input type="number" id="wrapperX" value="500"> - vertical
+            <input type="number" id="wrapperY" value="277">
+        </div>
+        image1
+        <input type="radio" name="img" class="imgRadio" value="image1" >
+        <br>image2
+        <input type="radio" name="img" class="imgRadio" value="image2" checked>
+        <br>image3
+        <input type="radio" name="img" class="imgRadio" value="image3">
+        <br> image4
+        <input type="radio" name="img" class="imgRadio" value="image4">
+        <br> image5
+        <input type="radio" name="img" class="imgRadio" value="image5">
+        <button onclick="pub.updateWrap()">submit</button>
+    </div>
+    <!-- canvas -->
+    Canvas:<br>
+    <canvas id="myCanvas" width="200px" height="111px">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+    <!-- wrapper css explained here: http://codepen.io/iluque/pen/xVdyyg/ -->
+    Nodes:
+    <div id="wrapper">
+        <!-- dinamically filled by JS -->
+    </div>
+</body>
+
+</html>

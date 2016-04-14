@@ -1,0 +1,45 @@
+body {
+    background: grey;
+}
+form{
+	border: 1px solid black;
+}
+
+canvas,
+#wrapper {
+    display: inline-block;
+    border: 1px solid black;
+}
+
+#wrapper {
+    width: 500px;
+    height: 500px;
+}
+
+
+/* auto aligned content in wraper. both vertical and horizontal*/
+
+h1{
+	font-size: 3em;
+}
+/*begin*/
+
+#wrapper>ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+#wrapper>ul>ul {
+    display: table-row;
+}
+
+#wrapper>ul>ul>li {
+    display: table-cell;
+    margin: auto;
+}
+
+
+/* end*/
