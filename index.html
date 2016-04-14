@@ -20,32 +20,38 @@
     <!-- form -->
     <div id="form">
         <div id="imageFrm">
-            <h2>original image</h2> image1
-            <input type="radio" name="img" class="imgRadio" value="image1">
-            <br>image2
-            <input type="radio" name="img" class="imgRadio" value="image2" checked>
-            <br>image3
-            <input type="radio" name="img" class="imgRadio" value="image3">
-            <br> image4
-            <input type="radio" name="img" class="imgRadio" value="image4">
-            <br> image5
-            <input type="radio" name="img" class="imgRadio" value="image5">
+            <div>
+                <h2>original image:</h2> image1
+                <input type="radio" name="img" class="imgRadio" value="image1">
+                <br>image2
+                <input type="radio" name="img" class="imgRadio" value="image2" checked>
+                <br>image3
+                <input type="radio" name="img" class="imgRadio" value="image3">
+                <br> image4
+                <input type="radio" name="img" class="imgRadio" value="image4">
+                <br> image5
+                <input type="radio" name="img" class="imgRadio" value="image5">
+            </div>
+            <div>
+                <h2>canvas size:</h2> TODO
+            </div>
         </div>
         <div class="arrow" onclick="pub.updateWrap()">
             <button onclick="pub.updateWrap()">submit</button>
-
             <img src="img/pixel-arrow.png">
         </div>
         <div id="outputFrm">
             <h2>output:</h2>
-            <ul><h3>amount of nodes:</h3>
+            <ul>
+                <h3>amount of nodes:</h3>
                 <li> horizontal
                     <input type="number" id="nodesX" value="100"> </li>
                 <li> vertical
                     <input type="number" id="nodesY" value="50">
                 </li>
             </ul>
-            <ul><h3>size wrapper:</h3>
+            <ul>
+                <h3>size wrapper:</h3>
                 <li> horizontal
                     <input type="number" id="wrapperX" value="500">
                 </li>
@@ -53,13 +59,12 @@
                     <input type="number" id="wrapperY" value="277">
                 </li>
             </ul>
-            content inside each node (text / HTML) i.e: "<i>&lt;p&gt;
+            <h3>content inside each node</h3> text or HTML    i.e: "<i>&lt;p&gt;
 hi &lt;/p&gt;
 </i>"
-            <input type="text" id="text" value="">
+            <input type="text" id="text" value="" >
         </div>
     </div>
-    
     <!-- canvas -->
     <br>
     <canvas id="myCanvas" width="200px" height="111px">

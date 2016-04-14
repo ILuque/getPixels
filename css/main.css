@@ -24,6 +24,9 @@ button{
     
     width: 4em;
 }
+#text{
+    width: 100%;
+}
 .arrow{
     width: 140px;
     height: 94px;
