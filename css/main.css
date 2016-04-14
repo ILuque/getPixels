@@ -48,8 +48,8 @@ h1 {
 #text {
     width: 100%;
 }
-
-
+.infoSubmit{text-align: center;
+}
 /*canvas & nodeWrapper*/
 
 canvas,
