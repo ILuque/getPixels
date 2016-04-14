@@ -15,8 +15,8 @@ console.info('updated');
     // gets data from wrapper Form
     function dataWrapForm() {
         var form = {};
-        form.nodesX = document.getElementById('nodesX').value;
-        form.nodesY = document.getElementById('nodesY').value;
+        form.nodesX = +document.getElementById('nodesX').value;
+        form.nodesY = +document.getElementById('nodesY').value;
 
         var wrapper = document.getElementById('wrapper');
         wrapper.style.width = document.getElementById('wrapperX').value + "px";
