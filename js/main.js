@@ -6,10 +6,12 @@ console.info('updated');
         pub.updateWrap();
     };
 
+
     pub.updateWrap = function() {
-        var d = dataWrapForm();
-        draw(d.imageId, d.nodesX, d.nodesY, d.text);
+        var d = dataWrapForm();  //check form
+        draw(d.imageId, d.nodesX, d.nodesY, d.text);  //draw new image
     };
+
     // gets data from wrapper Form
     function dataWrapForm() {
         var form = {};
@@ -39,15 +41,20 @@ console.info('updated');
 
     /* draws the image using nodes
      **  nodesX / nodesY   are the amount of nodes to display
-     **  inNode is what is inside the node (string)
+     **  inNode will be printed inside the node (string)
      */
-    function draw(imageId, nodesX, nodesY, inNode) {
+    function draw(imageId, jumpX, jumpY, inNode) {
+        if (jumpX<1 || isNaN(jumpX) ) jumpX = 1;
+        if (jumpY<1 || isNaN(jumpY) ) jumpY = 1;
+
         var canvas = document.getElementById('myCanvas');
         var wrapper = document.getElementById('wrapper');
         var img = document.getElementById(imageId);
 
         // draw img in canvas (getPixelColor gets info from it)
         var ctx = canvas.getContext("2d");
+        var canvasWidth = canvas.width;
+        var canvasHeight = canvas.height;
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
         /*  bucle to set structure 
@@ -57,10 +64,19 @@ console.info('updated');
 
         // double loop
         var x, y;
-        for (y = 0; y < nodesY; y++) {
-            structure += "<ul class='row" + y + "'>  ";
-            for (x = 0; x < nodesX; x++) {
-                structure += "<li id='li:" + x + "." + y +
+        var nodeX = 0;
+        var nodeY = 0;
+        //test
+/*        jumpY =15;
+        jumpX=15;*/
+
+        //ROWS
+        for (y = 0; y < canvasHeight; y+=jumpY, nodeY++) {
+            structure += "<ul class='row" + nodeY + "'>  ";
+            // COLUMNS
+            nodeX = 0; //restart X
+            for (x = 0; x < canvasWidth; x+=jumpX, nodeX++) {
+                structure += "<li id='li:" + nodeX + "." + nodeY +
                     "'' style='background:rgba(" +
                     getPixelColor(canvas, x * 3, y * 3) +
                     ");'>" + inNode + "</li>";
