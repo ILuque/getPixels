@@ -20,8 +20,8 @@ h1 {
     margin: 1em 0 2em;
 }
 
-button {
-    width: 100%
+.imgOriginal{
+    height:1em;
 }
 
 #outputFrm,
@@ -57,7 +57,7 @@ canvas,
     border: 1px solid black;
 }
 
-canvas,
+#canvasWp,
 #wrapper,
 .arrow {
     display: inline-block;
@@ -88,7 +88,6 @@ canvas,
 
 .arrow img:hover {
     width: 170px;
-    height: 130px;
 }
 
 

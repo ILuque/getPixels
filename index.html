@@ -11,40 +11,62 @@
 </head>
 
 <body>
-    <!-- loading images: HIDDEN -->
-    <img id="image1" src="img/worldMap.png" style="display:none;">
-    <img id="image2" src="img/worldMap200x111.png" style="display:none;">
-    <img id="image3" src="img/picasso.jpg" style="display:none;">
-    <img id="image4" src="img/seta.jpg" style="display:none;">
-    <img id="image5" src="img/chrome.png" style="display:none;">
+    <!-- hidden images -->
+    <img id="image1" src="img/image1.png" style="display:none;">
+    <img id="image2" src="img/image2.png" style="display:none;">
+    <img id="image3" src="img/image3.png" style="display:none;">
+    <img id="image4" src="img/image4.png" style="display:none;">
+    <img id="image5" src="img/image5.png" style="display:none;">
+    <img id="image6" src="img/image6.png" style="display:none;">
     <!-- form -->
     <div id="form">
         <div id="imageFrm">
             <div>
-                <h2>original image:</h2> image1
+                <h2>original images:</h2> image1
                 <input type="radio" name="img" class="imgRadio" value="image1">
+                <img id="" src="img/image1.png" class="imgOriginal">
                 <br>image2
                 <input type="radio" name="img" class="imgRadio" value="image2" checked>
+                <img id="" src="img/image2.png" class="imgOriginal">
                 <br>image3
                 <input type="radio" name="img" class="imgRadio" value="image3">
+                <img id="" src="img/image3.png" class="imgOriginal">
                 <br> image4
                 <input type="radio" name="img" class="imgRadio" value="image4">
+                <img id="" src="img/image4.png" class="imgOriginal">
                 <br> image5
                 <input type="radio" name="img" class="imgRadio" value="image5">
+                <img id="" src="img/image5.png" class="imgOriginal">
+                <br> image6
+                <input type="radio" name="img" class="imgRadio" value="image6">
+                <img id="" src="img/image6.png" class="imgOriginal">
             </div>
             <div>
-                <h2>canvas size:</h2> TODO
+                <h2>canvas size:</h2>
+                <ul>
+                    <li> horizontal
+                        <input type="number" id="canvasX" value="200">
+                    </li>
+                    <li> vertical
+                        <input type="number" id="canvasY" value="111">
+                    </li>
+                </ul>
             </div>
         </div>
         <div id="outputFrm">
             <h2>output:</h2>
             <ul>
-                <h3>pixels used from original canvas that will be converted to nodes:</h3>
-                <li> horizontal jump: i.e: 3 means will check pixels 0, 3, 6, 0, etc ( 1 pixel checked - 2 not checked)
+                <h3>pixels to converted to nodes:</h3>
+                <li> horizontal jump:
                     <input type="number" id="nodesX" value="10"> </li>
                 <li> vertical jump
                     <input type="number" id="nodesY" value="10">
                 </li>
+                i.e:
+                <ul>
+                    <li> <b>1</b> means it will check <b>ALL</b> the pixels from the original image</li>
+                    <li> <b>3</b> means it will check pixels that are <b>multiples of 3</b> ( pixels #3, #6, #9, etc )</li>
+                </ul>
             </ul>
             <ul>
                 <h3>size wrapper:</h3>
@@ -63,12 +85,14 @@ hi &lt;/p&gt;
     </div>
     <!-- canvas -->
     <br>
-    <div class="canvasAndResult">
-        <canvas id="myCanvas" width="200px" height="111px">
-            Your browser does not support the HTML5 canvas tag.
-        </canvas>
+    <div id="panel">
+        <div id="canvasWp">
+            <canvas id="myCanvas" width="200px" height="111px">
+                Your browser does not support the HTML5 canvas tag.
+            </canvas>
+        </div>
         <div class="arrow" onclick="pub.updateWrap()">
-           <!--  <button onclick="pub.updateWrap()">submit</button> -->
+            <!--  <button onclick="pub.updateWrap()">submit</button> -->
             <img src="img/pixel-arrow.png">
         </div>
         <!-- wrapper css explained here: http://codepen.io/iluque/pen/xVdyyg/ -->
