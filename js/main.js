@@ -79,7 +79,7 @@ console.info('updated');
 
         // canvas (origin) and wrapper (HTML node wrapper)
         var canvas = document.getElementById('myCanvas');
-        var nodeWrap = document.getElementById('nodeWwrapper');
+        var nodeWrap = document.getElementById('nodeWrapper');
         
 
 
