@@ -5,8 +5,12 @@ body {
 /*form*/
 #form {
     width:100%;
-    border: 1px solid black;
+    border-bottom: 1px dotted black;
     display: inline-flex;
+    margin: 1em 0 2em;
+}
+button{
+    width: 100%
 }
 
 #outputFrm, #imageFrm {
