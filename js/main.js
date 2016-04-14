@@ -1,5 +1,5 @@
 console.info('updated');
-(function(pub, $, undefined) { 
+(function(pub, $, undefined) {
     "use strict";
     // default values
     window.onload = function() {
@@ -8,8 +8,8 @@ console.info('updated');
 
 
     pub.updateWrap = function() {
-        var d = dataWrapForm();  //check form
-        draw(d.imageId, d.nodesX, d.nodesY, d.text);  //draw new image
+        var d = dataWrapForm(); //check form
+        draw(d.imageId, d.nodesX, d.nodesY, d.text); //draw new image
     };
 
     // gets data from wrapper Form
@@ -40,12 +40,12 @@ console.info('updated');
 
 
     /* draws the image using nodes
-     **  nodesX / nodesY   are the amount of nodes to display
-     **  inNode will be printed inside the node (string)
+     *  - nodesX / nodesY   are the amount of nodes to display
+     *  - inNode will be printed inside the node (string)
      */
     function draw(imageId, jumpX, jumpY, inNode) {
-        if (jumpX<1 || isNaN(jumpX) ) jumpX = 1;
-        if (jumpY<1 || isNaN(jumpY) ) jumpY = 1;
+        if (jumpX < 1 || isNaN(jumpX)) jumpX = 1;
+        if (jumpY < 1 || isNaN(jumpY)) jumpY = 1;
 
         var canvas = document.getElementById('myCanvas');
         var wrapper = document.getElementById('wrapper');
@@ -58,7 +58,7 @@ console.info('updated');
         ctx.drawImage(img, 0, 0, img.width, img.height);
 
         /*  bucle to set structure 
-         ** for better performance setted all up in an array and appended afterwards
+         *  for better performance setted all up in an array and appended afterwards
          */
         var structure = "<ul id='mainVerticalUl'>";
 
@@ -66,19 +66,16 @@ console.info('updated');
         var x, y;
         var nodeX = 0;
         var nodeY = 0;
-        //test
-/*        jumpY =15;
-        jumpX=15;*/
 
         //ROWS
-        for (y = 0; y < canvasHeight; y+=jumpY, nodeY++) {
+        for (y = 0; y < canvasHeight; y += jumpY, nodeY++) {
             structure += "<ul class='row" + nodeY + "'>  ";
             // COLUMNS
             nodeX = 0; //restart X
-            for (x = 0; x < canvasWidth; x+=jumpX, nodeX++) {
+            for (x = 0; x < canvasWidth; x += jumpX, nodeX++) {
                 structure += "<li id='li:" + nodeX + "." + nodeY +
                     "'' style='background:rgba(" +
-                    getPixelColor(canvas, x * 3, y * 3) +
+                    getPixelColor(canvas, x , y ) +
                     ");'>" + inNode + "</li>";
             }
             structure += " </ul>";
