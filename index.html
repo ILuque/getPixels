@@ -19,37 +19,54 @@
     <img id="image5" src="img/chrome.png" style="display:none;">
     <!-- form -->
     <div id="form">
-        <div>amount of nodes.
-            <br> - horizontal
-            <input type="number" id="nodesX" value="100" size="4"> - vertical
-            <input type="number" id="nodesY" value="50" size="4">
+        <div id="imageFrm">
+            <h2>original image</h2> image1
+            <input type="radio" name="img" class="imgRadio" value="image1">
+            <br>image2
+            <input type="radio" name="img" class="imgRadio" value="image2" checked>
+            <br>image3
+            <input type="radio" name="img" class="imgRadio" value="image3">
+            <br> image4
+            <input type="radio" name="img" class="imgRadio" value="image4">
+            <br> image5
+            <input type="radio" name="img" class="imgRadio" value="image5">
         </div>
-        text in square
-        <input type="text" id="text" value="">
-        <div>size wrapper.
-            <br> - horizontal
-            <input type="number" id="wrapperX" value="500"> - vertical
-            <input type="number" id="wrapperY" value="277">
+        <div class="arrow" onclick="pub.updateWrap()">
+            <button onclick="pub.updateWrap()">submit</button>
+
+            <img src="img/pixel-arrow.png">
         </div>
-        image1
-        <input type="radio" name="img" class="imgRadio" value="image1" >
-        <br>image2
-        <input type="radio" name="img" class="imgRadio" value="image2" checked>
-        <br>image3
-        <input type="radio" name="img" class="imgRadio" value="image3">
-        <br> image4
-        <input type="radio" name="img" class="imgRadio" value="image4">
-        <br> image5
-        <input type="radio" name="img" class="imgRadio" value="image5">
-        <button onclick="pub.updateWrap()">submit</button>
+        <div id="outputFrm">
+            <h2>output:</h2>
+            <ul><h3>amount of nodes:</h3>
+                <li> horizontal
+                    <input type="number" id="nodesX" value="100"> </li>
+                <li> vertical
+                    <input type="number" id="nodesY" value="50">
+                </li>
+            </ul>
+            <ul><h3>size wrapper:</h3>
+                <li> horizontal
+                    <input type="number" id="wrapperX" value="500">
+                </li>
+                <li> vertical
+                    <input type="number" id="wrapperY" value="277">
+                </li>
+            </ul>
+            content inside each node (text / HTML) i.e: "<i>&lt;p&gt;
+hi &lt;/p&gt;
+</i>"
+            <input type="text" id="text" value="">
+        </div>
     </div>
+    
     <!-- canvas -->
-    Canvas:<br>
+    <br>
     <canvas id="myCanvas" width="200px" height="111px">
         Your browser does not support the HTML5 canvas tag.
     </canvas>
     <!-- wrapper css explained here: http://codepen.io/iluque/pen/xVdyyg/ -->
-    Nodes:
+    <img src="img/pixel-arrow.png" class="arrow">
     <div id="wrapper">
         <!-- dinamically filled by JS -->
     </div>

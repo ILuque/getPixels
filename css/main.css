@@ -1,10 +1,44 @@
 body {
     background: grey;
 }
-form{
-	border: 1px solid black;
+
+/*form*/
+#form {
+    width:100%;
+    border: 1px solid black;
+    display: inline-flex;
 }
 
+#outputFrm, #imageFrm {
+    border: 1px solid black;
+    width: 50%;
+    display: block;
+    margin: 1em;
+    padding: 1em;
+}
+#nodesX, #nodesY {
+    
+    width: 4em;
+}
+.arrow{
+    width: 140px;
+    height: 94px;
+    margin: auto;
+    transition: all 1s ease;
+}
+.arrow img{
+        transition: all 0.3s ease;
+        width: 140px;
+        height: 94px;
+}
+.arrow img:hover{
+    width: 170px;
+    height: 130px;
+
+}
+
+
+/*canvas & wrapper*/
 canvas,
 #wrapper {
     display: inline-block;
@@ -19,8 +53,8 @@ canvas,
 
 /* auto aligned content in wraper. both vertical and horizontal*/
 
-h1{
-	font-size: 3em;
+h1 {
+    font-size: 3em;
 }
 /*begin*/
 
