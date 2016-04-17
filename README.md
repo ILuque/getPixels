@@ -1,5 +1,5 @@
 
 
-Extract pixels from image (using canvas)
+Extract pixels info from image (using canvas)
 
-Use these pixels info for drawing an "image" using html nodes.
+Use that info for drawing an "image" using html nodes.
