@@ -104,8 +104,12 @@ canvas,
     display: table;
 }
 
-#nodeWrapper>ul>ul {
+ul>ul {
     display: table-row;
+}
+
+.hex>ul {
+    display: block;
 }
 
 #nodeWrapper>ul>ul>li {
@@ -115,6 +119,15 @@ canvas,
 
 
 /* end*/
+
+/* odd and even values - .hex*/
+row.hex{
+    margin-top: -13px;
+}
+oddRow.hex{
+margin-left:11px;
+}
+evenRow.hex{}
 
 
 /*footer*/
@@ -128,7 +141,7 @@ footer {
     border-top: 1px solid #e5e5e5;
 }
 
-p.footerText {
+footerText {
     margin: auto;
     width: 12em;
 }
