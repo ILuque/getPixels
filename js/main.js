@@ -49,7 +49,7 @@
         }
 
         /* ########################### */
-         console.log(f);
+        console.log(f);
 
         return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text, type: f.type };
 
@@ -115,7 +115,7 @@
 
         //ROWS
         for (y = 0; y < canvasHeight; y += jumpY, nodeY++) {
-            structure += "<ul class='row" + nodeY + "'>  ";
+            structure += "<ul class='row" + nodeY + " " + evenOddRow(y) + "'>  ";
             // COLUMNS
             nodeX = 0; //restart X
             for (x = 0; x < canvasWidth; x += jumpX, nodeX++) {
@@ -130,7 +130,7 @@
                         break;
                     case "hex":
                         /*  hexagon structure */
-                        structure += '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"><a xlink:href="http://luquemichel.com"><polygon points="11 1.5 21.8 7.8 21.8 20.3 11 26.5 0.2 20.3 0.2 7.8" style="fill:rgba(' + getPixelColor(canvas, x, y)+ ');stroke:blue"/></a></svg>';
+                        structure += '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"><a xlink:href="http://luquemichel.com"><polygon points="11 1.5 21.8 7.8 21.8 20.3 11 26.5 0.2 20.3 0.2 7.8" style="fill:rgba(' + getPixelColor(canvas, x, y) + ');stroke:blue"/></a></svg>';
                         break;
                     default:
                         throw " type of node  not defined. @switch in draw function";
@@ -138,7 +138,7 @@
                 }
 
 
-                
+
             }
             structure += " </ul>";
         }
@@ -147,6 +147,14 @@
         nodeWrap.innerHTML = structure;
         pub.structure = structure; //object fot the user
     } // \draw function
+
+    function evenOddRow(y) {
+        if (y % 2 === 0) {
+            return "evenRow" ;
+        } else {
+            return "oddRow" ;
+        }
+    }
 
     function getPixelColor(canvas, x, y) {
         var pixel = canvas.getContext('2d').getImageData(x, y, 1, 1).data;
