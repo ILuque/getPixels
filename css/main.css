@@ -108,7 +108,7 @@ ul>ul {
     display: table-row;
 }
 
-.hex>ul {
+ul.hex{
     display: block;
 }
 
@@ -121,13 +121,13 @@ ul>ul {
 /* end*/
 
 /* odd and even values - .hex*/
-row.hex{
+ul.row.hex{
     margin-top: -13px;
 }
-oddRow.hex{
+ul.oddRow.hex{
 margin-left:11px;
 }
-evenRow.hex{}
+
 
 
 /*footer*/
