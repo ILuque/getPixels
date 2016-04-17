@@ -1,3 +1,10 @@
+/*  Iker Luque  - getPixels 
+ *   Draw an image on a canvas. Later read pixel content of that image. Finally creates an image using HTML nodes
+ *    Canvas is drawn on the fly as it needs to resize to the original image size
+ *    Note user can choose if algorithm will read all pixels one by one, or just read one of x pixels.
+ */
+
+
 
 (function(pub, $, undefined) {
     "use strict";
@@ -105,6 +112,7 @@
                     "'' style='background:rgba(" +
                     getPixelColor(canvas, x, y) +
                     ");'>" + inNode + "</li>";
+
             }
             structure += " </ul>";
         }
