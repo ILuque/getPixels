@@ -53,17 +53,17 @@
         <div id="outputFrm">
             <h2>output:</h2>
             <ul>
-                <h3>pixels to converted to nodes:</h3>
+                <h3>pixels to be converted to nodes:</h3>
                 <li> horizontal multiple:
                     <input type="number" id="nodesX" value="2"> </li>
                 <li> vertical multiple:
                     <input type="number" id="nodesY" value="2">
                 </li>
                 i.e:
-                <ul>
-                    <li> <b>1</b> means it will check <b>ALL</b> the pixels from the original image</li>
-                    <li> <b>3</b> means it will check pixels that are <b>multiples of 3</b> ( pixels #3, #6, #9, etc )</li>
-                </ul>
+
+                    <br>  · <b> 1</b> means it will check <b>ALL</b> the pixels from the original image
+                    <br> · <b> 3</b> means it will check pixels that are <b>multiples of 3</b> ( pixels #3, #6, #9, etc )
+
             </ul>
             <ul>
                 <h3>size wrapper:</h3>
@@ -76,7 +76,7 @@
             </ul>
             <h3>type</h3>
                             plain square list node<input type="radio" name="type" class="typeRadio" value="plain" checked>
-                SVG hexagon<input type="radio" name="type" class="typeRadio" value="hex">
+                SVG hexagon (set a suitable  wrapper size)<input type="radio" name="type" class="typeRadio" value="hex">
 
             <h3>content inside each node</h3> text or HTML i.e: "<i>&lt;p&gt;
 hi &lt;/p&gt;
