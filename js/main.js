@@ -130,7 +130,7 @@
                         break;
                     case "hex":
                         /*  hexagon structure */
-                        structure += '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"><a xlink:href="http://luquemichel.com"><polygon points="11 1.5 21.8 7.8 21.8 20.3 11 26.5 0.2 20.3 0.2 7.8" style="fill:rgba(' + getPixelColor(canvas, x, y) + ');stroke:blue"/></a></svg>';
+                        structure += '<svg xmlns="http://www.w3.org/2000/svg" width="11" height="14"><a xlink:href="http://luquemichel.com"><polygon points="5.5 0.75 10.9 3.5 10.9 10.15 5.5 13.25 0.1 10.15 0.1 3.9" style="fill:rgba(' + getPixelColor(canvas, x, y) + ');stroke:blue"/></a></svg>';
                         break;
                     default:
                         throw " type of node  not defined. @switch in draw function";
