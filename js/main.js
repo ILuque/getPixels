@@ -115,7 +115,7 @@
 
         //ROWS
         for (y = 0; y < canvasHeight; y += jumpY, nodeY++) {
-            structure += "<ul class='row" + nodeY + " " + evenOddRow(y) + "'>  ";
+            structure += "<ul class='row" + nodeY + " row " + evenOddRow(y) + "'>  ";
             // COLUMNS
             nodeX = 0; //restart X
             for (x = 0; x < canvasWidth; x += jumpX, nodeX++) {
