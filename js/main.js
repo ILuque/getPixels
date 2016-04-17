@@ -48,8 +48,11 @@
             }
         }
 
+        /* ########################### */
+         console.log(f);
 
         return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text, type: f.type };
+
     }
 
 
@@ -118,20 +121,20 @@
             for (x = 0; x < canvasWidth; x += jumpX, nodeX++) {
                 switch (type) {
 
-                    case plain:
+                    case "plain":
                         /*pain*/
                         structure += "<li id='li:" + nodeX + "." + nodeY +
                             "'' style='background:rgba(" +
                             getPixelColor(canvas, x, y) +
                             ");'>" + inNode + "</li>";
                         break;
-                    case hexagon:
+                    case "hex":
                         /*  hexagon structure */
                         structure += '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"><a xlink:href="http://luquemichel.com"><polygon points="11 1.5 21.8 7.8 21.8 20.3 11 26.5 0.2 20.3 0.2 7.8" style="fill:' + getPixelColor(canvas, x, y)+ ';stroke:blue"/></a></svg>';
                         break;
                     default:
                         throw " type of node  not defined. @switch in draw function";
-                        break; //unreachable brack after 'throw'
+                        //break; //unreachable break after 'throw'
                 }
 
 
