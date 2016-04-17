@@ -17,7 +17,7 @@
 
     pub.updateWrap = function() {
         var f = dataWrapForm(); //check form        
-        draw(f.imageId, f.nodesX, f.nodesY, f.text); //draw new image
+        draw(f.imageId, f.nodesX, f.nodesY, f.text, f.type); //draw new image
     };
 
     // gets data from wrapper Form
@@ -31,18 +31,25 @@
         wrapper.style.height = document.getElementById('wrapperY').value + "px";
 
         f.text = document.getElementById('text').value;
-        f.radios = document.getElementsByClassName('imgRadio');
+        f.radiosOrigin = document.getElementsByClassName('imgRadio');
 
-        for (var i = 0; i < f.radios.length; i++) {
-            if (f.radios[i].type === 'radio' && f.radios[i].checked) {
+        for (var i = 0; i < f.radiosOrigin.length; i++) {
+            if (f.radiosOrigin[i].type === 'radio' && f.radiosOrigin[i].checked) {
                 // get value, set checked flag or do whatever you need to
-                f.image = f.radios[i].value;
+                f.image = f.radiosOrigin[i].value;
+            }
+        }
+        f.radiosType = document.getElementsByClassName('typeRadio');
+
+        for (i = 0; i < f.radiosType.length; i++) {
+            if (f.radiosType[i].type === 'radio' && f.radiosType[i].checked) {
+                // get value, set checked flag or do whatever you need to
+                f.type = f.radiosType[i].value;
             }
         }
 
 
-
-        return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text};
+        return { imageId: f.image, nodesX: f.nodesX, nodesY: f.nodesY, text: f.text, type: f.type };
     }
 
 
@@ -68,8 +75,9 @@
     /* draws the image using nodes
      *  - nodesX / nodesY   are the amount of nodes to display
      *  - inNode will be printed inside the node (string)
+     *  -  jumpX and jumpY are the multiple. It will read 1 in X pixels of the original image.
      */
-    function draw(imageId, jumpX, jumpY, inNode) {
+    function draw(imageId, jumpX, jumpY, inNode, type) {
         if (jumpX < 1 || isNaN(jumpX)) jumpX = 1;
         if (jumpY < 1 || isNaN(jumpY)) jumpY = 1;
 
@@ -82,7 +90,7 @@
         // canvas (origin) and wrapper (HTML node wrapper)
         var canvas = document.getElementById('myCanvas');
         var nodeWrap = document.getElementById('nodeWrapper');
-        
+
 
 
 
@@ -108,18 +116,33 @@
             // COLUMNS
             nodeX = 0; //restart X
             for (x = 0; x < canvasWidth; x += jumpX, nodeX++) {
-                structure += "<li id='li:" + nodeX + "." + nodeY +
-                    "'' style='background:rgba(" +
-                    getPixelColor(canvas, x, y) +
-                    ");'>" + inNode + "</li>";
+                switch (type) {
 
+                    case plain:
+                        /*pain*/
+                        structure += "<li id='li:" + nodeX + "." + nodeY +
+                            "'' style='background:rgba(" +
+                            getPixelColor(canvas, x, y) +
+                            ");'>" + inNode + "</li>";
+                        break;
+                    case hexagon:
+                        /*  hexagon structure */
+                        structure += '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="27"><a xlink:href="http://luquemichel.com"><polygon points="11 1.5 21.8 7.8 21.8 20.3 11 26.5 0.2 20.3 0.2 7.8" style="fill:' + getPixelColor(canvas, x, y)+ ';stroke:blue"/></a></svg>';
+                        break;
+                    default:
+                        throw " type of node  not defined. @switch in draw function";
+                        break; //unreachable brack after 'throw'
+                }
+
+
+                
             }
             structure += " </ul>";
         }
         structure += "</ul>";
 
         nodeWrap.innerHTML = structure;
-        pub.structure=structure; //object fot the user
+        pub.structure = structure; //object fot the user
     } // \draw function
 
     function getPixelColor(canvas, x, y) {
